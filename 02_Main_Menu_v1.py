@@ -13,6 +13,7 @@ def main_menu(self):
 
         # if user inputs 1, program continues
         if choice == '1':
+            print("Have fun shopping!")
             time.sleep(1)
 
         # if user inputs 2, the program will display instructions
@@ -30,4 +31,3 @@ def main_menu(self):
             print("Sorry, I didn't quite get that. Please try again")
 
 # Main routine goes here...
-print("test commit")
