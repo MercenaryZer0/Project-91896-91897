@@ -1,15 +1,6 @@
-class Task:
-    def __init__(self, area, perimeter, instructions  = False):
-        self.area = area
-        self.perimeter = perimeter
-        self.instructions = instructions
+import time
+import math
 
-class TaskManager:
-    def __init__(self):
-        self.tasks = []
+# Function goes here
 
-    def area_option(self):
-        name = 
-        
-
-    def want_instructions(self):
+# Main routine goes ehre
