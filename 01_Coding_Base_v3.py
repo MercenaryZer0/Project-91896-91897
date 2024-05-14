@@ -1,3 +1,5 @@
+"""This is a Shape Calculator that provides functions to calculate the area and perimeter of a shape."""
+
 import time  # Imports the time module
 import math  # Imports the math module
 
@@ -90,36 +92,63 @@ def main_menu():
         print("6. Exit")
 
         choice = not_blank("Enter your choice (1/2/3/4/5/6): ").lower()
+        try:
+            if choice == '1' or choice == 'Rectangle':
+                choice = '1'
 
-        if choice == '1' or choice == 'Rectangle':
-            choice = '1'
-            shape_calc.calc_rectangle()
+        
+                length = float(input("Enter the length of the rectangle: "))
+                width = float(input("Enter the width of the rectangle: "))
 
-        elif choice == '2' or choice == 'Circle':
-            choice = '2'
-            shape_calc.calc_circle()
+                area, perimeter = shape_calc.calc_rectangle(length, width)
+                print(f"Area: {area}, Perimeter: {perimeter}")
 
-        elif choice == '3' or choice == 'Triangle':
-            choice = '3'
-            shape_calc.calc_triangle()
+            elif choice == '2' or choice == 'Circle':
+                choice = '2'
 
-        elif choice == '4' or choice == 'Parallelogram':
-            choice = '4'
-            shape_calc.calc_parallelogram()
+                radius = float(input("Enter the radius of the circle: "))
 
-        elif choice == '5' or choice == 'Show History':
-            choice = '5'
-            shape_calc.view_history()
+                area, circumference = shape_calc.calc_circle(radius)
+                print(f"Area: {radius}, Circumference: {circumference}")
 
-        elif choice == '6' or choice == 'Exit':
-            choice == '6'
-            print("Exiting...")
-            time.sleep(3)
-            print("Have a nice day.")
-            break
+            elif choice == '3' or choice == 'Triangle':
+                choice = '3'
 
-        else:
-            print("Invalid input. Please try again")
+                base = float(input("Enter the base of the triangle: "))
+                height = float(input("Enter the height of the triangle: "))
+                a = float(input("Enter the length of side a: "))
+                b = float(input("Enter the length of side b: "))
+                c = float(input("Enter the length of side c: "))
+
+                area, perimeter = shape_calc.calc_triangle(base, height, a, b, c)
+                print(f"Area: {area}, Perimeter: {perimeter}")
+
+            elif choice == '4' or choice == 'Parallelogram':
+                choice = '4'
+
+                base = float(input("Enter the base of the parallelogram: "))
+                height = float(input("Enter the height of the parallelogram: "))
+                side = float(input("Enter the length of the side: "))
+                
+                area, perimeter = shape_calc.calc_parallelogram(base, height, side)
+                print(f"Area: {area}, Perimeter: {perimeter}")
+
+            elif choice == '5' or choice == 'Show History':
+                choice = '5'
+                shape_calc.view_history()
+
+            elif choice == '6' or choice == 'Exit':
+                choice == '6'
+                print("Exiting...")
+                time.sleep(3)
+                print("Have a nice day.")
+                break
+
+            else:
+                print("Invalid input. Please try again")
+
+        except ValueError:
+            print("Invalid input, must be a number. Please try again.")
 
 if __name__ == '__main__':
     main_menu()
